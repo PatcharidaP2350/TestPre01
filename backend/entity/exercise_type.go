@@ -7,9 +7,11 @@ import (
 )
 
 type ExerciseType struct {
+
 	gorm.Model
+
 	TypeName string
-	Description string
+
 }
 
 

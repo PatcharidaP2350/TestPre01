@@ -1,5 +1,3 @@
-
-
 package entity
 
 import (
@@ -8,8 +6,12 @@ import (
 )
 
 type Exercise struct {
+
 	gorm.Model
+
 	ExerciseName string
-	ExerciseType uint
+	ExerciseTypeId uint           //(Foreign Key to ExerciseType)
+	ExerciseType *ExerciseType `gorm:"foreignKey: exercise_type_id" json:"exerciseType"`
 	CaloriesBurndPerMinute int
+	
 }	
